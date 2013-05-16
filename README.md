@@ -1,6 +1,7 @@
 munin-statsd
 ============
 A Ruby script to send Munin-node data to a StatsD instance. As written, this is designed to be run from cron.
+It's checking the 'type' of each munin graph and sends either a 'counter' or 'gauge' value.
 
 This was inspired by Tech-Corps/munin-statsd
 
