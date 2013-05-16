@@ -17,7 +17,7 @@ statsd = Statsd.new(STATSD_HOST, STATSD_PORT)
 statsd.namespace = SCHEMABASE
 
 def statsd_method(config, name)
-  type = config["metrics"][name]["type"]
+  type = config["metrics"][name]["type"] rescue nil # if there is no configuration or some other problems
   case type
   when "DERIVE", "COUNTER", "ABSOLUTE"
     return :count
